@@ -14,7 +14,7 @@ Github: [Github Link](https://github.com/IanGitHub2/Project-1---Connect-4)
 
 
 ### WireFrame
-[![wireFrame img](20191202_123245.jpg)]
+![wireFrame img](./20191202_123245.jpg)
 
 
 ### Used to create the game
