@@ -2,8 +2,8 @@
 General Assembly SEI December 2 # Project-1---Connect-4
 
 Project: Connect 4
-Trello Board: [![Trello Board Link](https://trello.com/invite/b/dcXSDXNb/47744d2fa1dd9fe09426eadd462fa59e/project-1)]
-Github: [![Github Link](https://github.com/IanGitHub2/Project-1---Connect-4)]
+Trello Board: [Trello Board Link](https://trello.com/invite/b/dcXSDXNb/47744d2fa1dd9fe09426eadd462fa59e/project-1)
+Github: [Github Link](https://github.com/IanGitHub2/Project-1---Connect-4)
 
 ## Overview
   I have created Connect 4. I used to play connect 4 a lot when i was younger. 
