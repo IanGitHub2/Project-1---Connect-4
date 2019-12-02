@@ -11,7 +11,7 @@ Github:
 
 
 ### WireFrame
-[![wireFrame img](20191202_123245.jpg)]
+[![wireFrame img](file:///Users/iankincaid/Downloads/20191202_123245.jpg)]
 
 
 ### Used to create the game
