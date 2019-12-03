@@ -1,0 +1,8 @@
+ .box {
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    grid-template-rows: repeat(6,1fr);
+    column-gap: 5px;
+    row-gap: 5px;
+    background-color: cyan;
+}
