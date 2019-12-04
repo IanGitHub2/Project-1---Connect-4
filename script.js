@@ -5,23 +5,29 @@
 // then in css create a grid
 
 // then call the div and class made to style the div
+let playerOne = 1;
+let head4 = document.querySelector("h4");
 
-let col1 = function (){
+let createGameBoard = function (){
   for(let i = 0; i < 42; i++){
-    let newCol =  document.createElement(`div`);
-    newCol.setAttribute('class' ,'littleBox');
+    let newBoard =  document.createElement(`div`);
+    newBoard.setAttribute('class' ,'littleBox');
   let myBox =  document.querySelector('.box');
-  myBox.append(newCol);
-}
-}
-col1();
+  myBox.append(newBoard);
 
-let clickMe = document.querySelectorAll(".littleBox");
-
-for(let i = 0; i < clickMe.length; i++){
-    clickMe[i].addEventListener("click", function(){
-      this.style.backgroundColor = "red";
+  
+    newBoard.addEventListener("click", function(){
+      if(playerOne == 1){
+        this.style.backgroundColor = "red";
+        head4.textContent = "player 2";
+        playerOne = 0;
+      }else{
+        this.style.backgroundColor = "yellow";
+        head4.textContent = "player 1";
+        playerOne = 1;
+      }
     })
- }
-
+}
+}
+createGameBoard();
 
