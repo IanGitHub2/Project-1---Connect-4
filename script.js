@@ -14,7 +14,7 @@ let createGameBoard = function (){
     newBoard.setAttribute('class' ,'littleBox');
   let myBox =  document.querySelector('.box');
   myBox.append(newBoard);
-
+ console.log(document.querySelectorAll("div"))
   
     newBoard.addEventListener("click", function(){
       if(playerOne == 1){
