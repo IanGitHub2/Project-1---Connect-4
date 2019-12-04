@@ -2,23 +2,26 @@
      text-align: center;
      border: 3px solid black;
  }
- #masteBox {
-     background-color: blue;
+ p {
+     text-align: center;
  }
- 
- .box {
+ #masterBox {
     display: grid;
     grid-template-columns: repeat(7,1fr);
     grid-template-rows: repeat(6,1fr);
     column-gap: 5px;
     row-gap: 5px;
-    height: 50%;
-    width: 50%;
-    padding: 0 auto 0 auto;
-    margin: 20% auto 0 auto;
-    border-radius: 50%;
-    background-color: cyan;
+    border-radius: 0;
+    height: 30em;
+    width: 40em;
+    background-color: blue;
 }
-/* .littleBoxs {
-    background-color: brown;
-} */
+
+.littleBox {
+    height: 80%;
+    width: 70%;
+    padding: auto auto;
+    margin: auto auto;
+    border-radius: 50%;
+    background-color: white;
+}
