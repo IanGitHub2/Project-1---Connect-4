@@ -22,6 +22,8 @@ let createGameBoard = function (){
         newBoard.setAttribute('data-player', 1);
         hrCheck();
         vrCheck();
+        aglCheck();
+        agrCheck(); 
         head4.textContent = "Player 2 Turn";
         playerNumber = 2;
       }else{
@@ -29,6 +31,8 @@ let createGameBoard = function (){
         newBoard.setAttribute('data-player', 2)
         hrCheck();
         vrCheck();
+        aglCheck();
+        agrCheck(); 
         head4.textContent = "Player 1 Turn";
         playerNumber = 1;
       }
@@ -44,9 +48,6 @@ let callDivsBack = document.querySelectorAll('div');
 // 7^n+1 where n <6
 let hrCheck = function (){
   for(let r = 0; r < 39; r++ )
-  // for (r = 7; r < 11; r++)
-  // for (r )
-  // for ( )
   {
     if((callDivsBack[r].dataset.player) == playerNumber && (callDivsBack[r +1].dataset.player) == playerNumber && (callDivsBack[r + 2].dataset.player) == playerNumber && (callDivsBack[r + 3].dataset.player) == playerNumber ){
     console.log('win');
@@ -59,7 +60,21 @@ let vrCheck = function (){
     if((callDivsBack[c].dataset.player) == playerNumber && (callDivsBack[c + 7].dataset.player) == playerNumber && (callDivsBack[c + 14].dataset.player) == playerNumber && (callDivsBack[c + 21].dataset.player) == playerNumber ){
       console.log('win');
       }
+  }
+}
 
-    
+let aglCheck = function (){
+  for(let c = 0; c < 18; c++){
+    if((callDivsBack[c].dataset.player) == playerNumber && (callDivsBack[c + 8].dataset.player) == playerNumber && (callDivsBack[c + 16].dataset.player) == playerNumber && (callDivsBack[c + 24].dataset.player) == playerNumber ){
+      console.log('win');
+      }
+  }
+}
+
+let agrCheck = function (){
+  for(let c = 0; c < 24; c++){
+    if((callDivsBack[c].dataset.player) == playerNumber && (callDivsBack[c + 6].dataset.player) == playerNumber && (callDivsBack[c + 12].dataset.player) == playerNumber && (callDivsBack[c + 18].dataset.player) == playerNumber ){
+      console.log('win');
+      }
   }
 }
