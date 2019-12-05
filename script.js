@@ -21,12 +21,14 @@ let createGameBoard = function (){
         this.style.backgroundColor = "red";
         newBoard.setAttribute('data-player', 1);
         hrCheck();
+        vrCheck();
         head4.textContent = "Player 2 Turn";
         playerNumber = 2;
       }else{
         this.style.backgroundColor = "yellow";
         newBoard.setAttribute('data-player', 2)
         hrCheck();
+        vrCheck();
         head4.textContent = "Player 1 Turn";
         playerNumber = 1;
       }
@@ -41,14 +43,23 @@ let callDivsBack = document.querySelectorAll('div');
 // console.log(callDivsBack)
 // 7^n+1 where n <6
 let hrCheck = function (){
-  for(let r = 0; r < 4; r++ )
+  for(let r = 0; r < 39; r++ )
   // for (r = 7; r < 11; r++)
   // for (r )
   // for ( )
   {
-    // console.log(callDivsBack[r].dataset.player);
     if((callDivsBack[r].dataset.player) == playerNumber && (callDivsBack[r +1].dataset.player) == playerNumber && (callDivsBack[r + 2].dataset.player) == playerNumber && (callDivsBack[r + 3].dataset.player) == playerNumber ){
     console.log('win');
     }
+  }
+}
+
+let vrCheck = function (){
+  for(let c = 0; c < 21; c++){
+    if((callDivsBack[c].dataset.player) == playerNumber && (callDivsBack[c + 7].dataset.player) == playerNumber && (callDivsBack[c + 14].dataset.player) == playerNumber && (callDivsBack[c + 21].dataset.player) == playerNumber ){
+      console.log('win');
+      }
+
+    
   }
 }
