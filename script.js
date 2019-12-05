@@ -5,7 +5,7 @@
 // then in css create a grid
 
 // then call the div and class made to style the div
-let playerOne = 1;
+let playerNumber = 1;
 let head4 = document.querySelector("h4");
 
 let createGameBoard = function (){
@@ -14,22 +14,41 @@ let createGameBoard = function (){
     newBoard.setAttribute('class' ,'littleBox');
   let myBox =  document.querySelector('.box');
   myBox.append(newBoard);
- console.log(document.querySelectorAll("div"))
+//  console.log(document.querySelectorAll("div"))
   
     newBoard.addEventListener("click", function(){
-      if(playerOne == 1){
+      if(playerNumber == 1){
         this.style.backgroundColor = "red";
-        head4.textContent = "player 2";
-        playerOne = 0;
+        newBoard.setAttribute('data-player', 1);
+        hrCheck();
+        head4.textContent = "Player 2 Turn";
+        playerNumber = 2;
       }else{
         this.style.backgroundColor = "yellow";
-        head4.textContent = "player 1";
-        playerOne = 1;
+        newBoard.setAttribute('data-player', 2)
+        hrCheck();
+        head4.textContent = "Player 1 Turn";
+        playerNumber = 1;
       }
     })
 }
 }
 createGameBoard();
 
-// create a function that checks each div that was clicked next to a div that is selected
 
+// create a function that checks each div that was clicked next to a div that is selected
+let callDivsBack = document.querySelectorAll('div');
+// console.log(callDivsBack)
+// 7^n+1 where n <6
+let hrCheck = function (){
+  for(let r = 0; r < 4; r++ )
+  // for (r = 7; r < 11; r++)
+  // for (r )
+  // for ( )
+  {
+    // console.log(callDivsBack[r].dataset.player);
+    if((callDivsBack[r].dataset.player) == playerNumber && (callDivsBack[r +1].dataset.player) == playerNumber && (callDivsBack[r + 2].dataset.player) == playerNumber && (callDivsBack[r + 3].dataset.player) == playerNumber ){
+    console.log('win');
+    }
+  }
+}
