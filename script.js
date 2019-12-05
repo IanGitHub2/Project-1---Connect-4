@@ -31,3 +31,5 @@ let createGameBoard = function (){
 }
 createGameBoard();
 
+// create a function that checks each div that was clicked next to a div that is selected
+
