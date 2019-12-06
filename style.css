@@ -1,7 +1,8 @@
  body {
      background-image: url(./trianglify-lowres.png);
      background-repeat: no-repeat;
-     background-size: 90rem;
+     background-size: 90em; 
+     
  }
  h1 {
      text-align: center;
@@ -29,7 +30,7 @@
     margin: 0 auto;
     /* background-color: blue; */
     background: rgb(2,0,36);
-background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(13,13,94,1) 16%, rgba(0,212,255,1) 100%);
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(13,13,94,1) 16%, rgba(0,212,255,1) 100%);
 }
 
 .littleBox {

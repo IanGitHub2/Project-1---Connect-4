@@ -8,6 +8,7 @@
 let playerNumber = 1;
 let head4 = document.querySelector("h4");
 let head1 = document.querySelector("h1");
+let clickCounter = 0;
 
 let createGameBoard = function (){
   for(let i = 0; i < 42; i++){
@@ -15,28 +16,34 @@ let createGameBoard = function (){
     newBoard.setAttribute('class' ,'littleBox');
   let myBox =  document.querySelector('.box');
   myBox.append(newBoard);
+
+
 //  console.log(document.querySelectorAll("div"))
-  
+  // player 1 and 2 below it click listener that checks if they win
     newBoard.addEventListener("click", function(){
       if(playerNumber == 1){
         this.style.backgroundColor = "red";
         newBoard.setAttribute('data-player', 1);
+        clickCounter++;
         hrCheck();
         vrCheck();
         aglCheck();
         agrCheck(); 
-        drawCheck();
+        clickLimit();
+        // drawCheck();
         head4.textContent = "Player 2 Turn";
         head4.style.color = "yellow";
         playerNumber = 2;
       }else{
         this.style.backgroundColor = "yellow";
-        newBoard.setAttribute('data-player', 2)
+        newBoard.setAttribute('data-player', 2);
+        clickCounter++;
         hrCheck();
         vrCheck();
         aglCheck();
         agrCheck();
-        drawCheck(); 
+        clickLimit();
+        // drawCheck(); 
         head4.textContent = "Player 1 Turn";
         head4.style.color = "red";
         playerNumber = 1;
@@ -45,7 +52,7 @@ let createGameBoard = function (){
 }
 }
 createGameBoard();
-
+console.log(clickCounter)
 
 // create a function that checks each div that was clicked next to a div that is selected
 let callDivsBack = document.querySelectorAll('div');
@@ -53,7 +60,7 @@ let callDivsBack = document.querySelectorAll('div');
 let hrCheck = function (){
   for(let r = 0; r < 39; r++ )
   {
-    if((callDivsBack[r].dataset.player) == playerNumber && (callDivsBack[r +1].dataset.player) == playerNumber && (callDivsBack[r + 2].dataset.player) == playerNumber && (callDivsBack[r + 3].dataset.player) == playerNumber ){
+    if((callDivsBack[r].dataset.player) == playerNumber && (callDivsBack[r +1].dataset.player) == playerNumber && (callDivsBack[r + 2].dataset.player) == playerNumber  && (callDivsBack[r + 3].dataset.player) == playerNumber){
       head1.textContent = "Winner Player" + ` ${playerNumber}`;
       head1.style.color = "green";
       head1.style.fontSize = "4em";
@@ -94,10 +101,9 @@ let agrCheck = function (){
       }
   }
 }
-let drawCheck = function (){
-  for(let d = 0; d < 42; d++){
-    if(callDivsBack[d].dataset.player === true){
-      head1.textContent = "Draw";
+let clickLimit = function (){
+    if(clickCounter == 42) {
+      return head1.textContent = "Draw", head1.style.color = "yellow", head1.style.fontSize = "4em";
+      // console.log('draw');
     }
   }
-}
