@@ -8,19 +8,23 @@
 let playerNumber = 1;
 let head4 = document.querySelector("h4");
 let head1 = document.querySelector("h1");
+let master = document.querySelector("span");
 let clickCounter = 0;
 
 let createGameBoard = function (){
   for(let i = 0; i < 42; i++){
     let newBoard =  document.createElement(`div`);
-    newBoard.setAttribute('class' ,'littleBox');
-  let myBox =  document.querySelector('.box');
-  myBox.append(newBoard);
+      newBoard.setAttribute('class' ,'littleBox');
+    let myBox =  document.querySelector('.box');
+      myBox.append(newBoard);
 
-
-//  console.log(document.querySelectorAll("div"))
   // player 1 and 2 below it click listener that checks if they win
     newBoard.addEventListener("click", function(){
+      if(this.dataset.player == 1 || this.dataset.player == 2){
+       console.log('stop');
+       console.log(this.dataset.player)
+        return
+      }
       if(playerNumber == 1){
         this.style.backgroundColor = "red";
         newBoard.setAttribute('data-player', 1);
@@ -30,7 +34,7 @@ let createGameBoard = function (){
         aglCheck();
         agrCheck(); 
         clickLimit();
-        // drawCheck();
+        backGroundChange();
         head4.textContent = "Player 2 Turn";
         head4.style.color = "yellow";
         playerNumber = 2;
@@ -43,7 +47,7 @@ let createGameBoard = function (){
         aglCheck();
         agrCheck();
         clickLimit();
-        // drawCheck(); 
+        backGroundChange();
         head4.textContent = "Player 1 Turn";
         head4.style.color = "red";
         playerNumber = 1;
@@ -52,11 +56,18 @@ let createGameBoard = function (){
 }
 }
 createGameBoard();
-console.log(clickCounter)
-
+//try putting the class in the body and then toggling between
+// danger zone more that half thorght a game and no win
+let backGroundChange = function (){
+  if(clickCounter == 2) {
+    head1.textContent = "Welcome to the Danger zone";
+    head1.style.color = "red";
+    document.body.style.backgroundImage = "url('./trianglify-lowresred.png')";
+    // master.classList.toggle('dangerZone') 
+  }
+}
 // create a function that checks each div that was clicked next to a div that is selected
 let callDivsBack = document.querySelectorAll('div');
-// console.log(callDivsBack)
 let hrCheck = function (){
   for(let r = 0; r < 39; r++ )
   {
@@ -64,7 +75,6 @@ let hrCheck = function (){
       head1.textContent = "Winner Player" + ` ${playerNumber}`;
       head1.style.color = "green";
       head1.style.fontSize = "4em";
-    // console.log('win');
     }
   }
 }
@@ -75,7 +85,6 @@ let vrCheck = function (){
       head1.textContent = "Winner Player" + ` ${playerNumber}`;
       head1.style.color = "green";
       head1.style.fontSize = "4em";
-      // console.log('win');
       }
   }
 }
@@ -86,7 +95,6 @@ let aglCheck = function (){
       head1.textContent = "Winner Player" + ` ${playerNumber}`;
       head1.style.color = "green";
       head1.style.fontSize = "4em";
-      // console.log('win');
       }
   }
 }
@@ -97,13 +105,13 @@ let agrCheck = function (){
       head1.textContent = "Winner Player" + ` ${playerNumber}`;
       head1.style.color = "green";
       head1.style.fontSize = "4em";
-      // console.log('win');
       }
   }
 }
 let clickLimit = function (){
     if(clickCounter == 42) {
-      return head1.textContent = "Draw", head1.style.color = "yellow", head1.style.fontSize = "4em";
-      // console.log('draw');
+      head1.textContent = "Draw";
+      head1.style.color = "yellow";
+      head1.style.fontSize = "4em";
     }
   }

@@ -28,11 +28,13 @@
     height: 30em;
     width: 40em;
     margin: 0 auto;
-    /* background-color: blue; */
     background: rgb(2,0,36);
     background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(13,13,94,1) 16%, rgba(0,212,255,1) 100%);
 }
-
+.dangerZone {
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(34,5,5,1) 16%, rgba(221,11,11,1) 100%);
+}
 .littleBox {
     height: 80%;
     width: 70%;
