@@ -27,6 +27,7 @@ let createGameBoard = function (){
         agrCheck(); 
         drawCheck();
         head4.textContent = "Player 2 Turn";
+        head4.style.color = "yellow";
         playerNumber = 2;
       }else{
         this.style.backgroundColor = "yellow";
@@ -37,6 +38,7 @@ let createGameBoard = function (){
         agrCheck();
         drawCheck(); 
         head4.textContent = "Player 1 Turn";
+        head4.style.color = "red";
         playerNumber = 1;
       }
     })
