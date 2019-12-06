@@ -72,7 +72,7 @@ let aglCheck = function (){
 }
 
 let agrCheck = function (){
-  for(let c = 0; c < 24; c++){
+  for(let c = 0; c < 21; c++){
     if((callDivsBack[c].dataset.player) == playerNumber && (callDivsBack[c + 6].dataset.player) == playerNumber && (callDivsBack[c + 12].dataset.player) == playerNumber && (callDivsBack[c + 18].dataset.player) == playerNumber ){
       console.log('win');
       }
