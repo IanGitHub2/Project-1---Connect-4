@@ -7,6 +7,7 @@
 // then call the div and class made to style the div
 let playerNumber = 1;
 let head4 = document.querySelector("h4");
+let head1 = document.querySelector("h1");
 
 let createGameBoard = function (){
   for(let i = 0; i < 42; i++){
@@ -45,12 +46,12 @@ createGameBoard();
 // create a function that checks each div that was clicked next to a div that is selected
 let callDivsBack = document.querySelectorAll('div');
 // console.log(callDivsBack)
-// 7^n+1 where n <6
 let hrCheck = function (){
   for(let r = 0; r < 39; r++ )
   {
     if((callDivsBack[r].dataset.player) == playerNumber && (callDivsBack[r +1].dataset.player) == playerNumber && (callDivsBack[r + 2].dataset.player) == playerNumber && (callDivsBack[r + 3].dataset.player) == playerNumber ){
-    console.log('win');
+      head1.textContent = "winner" + ` ${playerNumber}`;
+    // console.log('win');
     }
   }
 }
@@ -58,7 +59,8 @@ let hrCheck = function (){
 let vrCheck = function (){
   for(let c = 0; c < 21; c++){
     if((callDivsBack[c].dataset.player) == playerNumber && (callDivsBack[c + 7].dataset.player) == playerNumber && (callDivsBack[c + 14].dataset.player) == playerNumber && (callDivsBack[c + 21].dataset.player) == playerNumber ){
-      console.log('win');
+      head1.textContent = "winner" + ` ${playerNumber}`;
+      // console.log('win');
       }
   }
 }
@@ -66,7 +68,8 @@ let vrCheck = function (){
 let aglCheck = function (){
   for(let c = 0; c < 18; c++){
     if((callDivsBack[c].dataset.player) == playerNumber && (callDivsBack[c + 8].dataset.player) == playerNumber && (callDivsBack[c + 16].dataset.player) == playerNumber && (callDivsBack[c + 24].dataset.player) == playerNumber ){
-      console.log('win');
+      head1.textContent = "winner" + ` ${playerNumber}`;
+      // console.log('win');
       }
   }
 }
@@ -74,7 +77,8 @@ let aglCheck = function (){
 let agrCheck = function (){
   for(let c = 0; c < 21; c++){
     if((callDivsBack[c].dataset.player) == playerNumber && (callDivsBack[c + 6].dataset.player) == playerNumber && (callDivsBack[c + 12].dataset.player) == playerNumber && (callDivsBack[c + 18].dataset.player) == playerNumber ){
-      console.log('win');
+      head1.textContent = "winner" + ` ${playerNumber}`;
+      // console.log('win');
       }
   }
 }
