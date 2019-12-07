@@ -21,8 +21,6 @@ let createGameBoard = function (){
   // player 1 and 2 below it click listener that checks if they win
     newBoard.addEventListener("click", function(){
       if(this.dataset.player == 1 || this.dataset.player == 2){
-       console.log('stop');
-       console.log(this.dataset.player)
         return
       }
       if(playerNumber == 1){
@@ -37,6 +35,7 @@ let createGameBoard = function (){
         backGroundChange();
         head4.textContent = "Player 2 Turn";
         head4.style.color = "yellow";
+        head4.style.textShadow= "2px 2px 4px #000000";
         playerNumber = 2;
       }else{
         this.style.backgroundColor = "yellow";
@@ -50,6 +49,7 @@ let createGameBoard = function (){
         backGroundChange();
         head4.textContent = "Player 1 Turn";
         head4.style.color = "red";
+        head4.style.textShadow= "2px 2px 4px #000000";
         playerNumber = 1;
       }
     })
@@ -57,13 +57,12 @@ let createGameBoard = function (){
 }
 createGameBoard();
 //try putting the class in the body and then toggling between
-// danger zone more that half thorght a game and no win
+// switch up half way thought the game if no win yet
 let backGroundChange = function (){
-  if(clickCounter == 2) {
-    head1.textContent = "Welcome to the Danger zone";
-    head1.style.color = "red";
-    document.body.style.backgroundImage = "url('./trianglify-lowresred.png')";
-    // master.classList.toggle('dangerZone') 
+  if(clickCounter == 21) {
+    head1.textContent = "Let's change things up";
+    document.body.style.backgroundImage = "url('./trianglify-lowresgreen.png')";
+    master.setAttribute('id',"changeUp");
   }
 }
 // create a function that checks each div that was clicked next to a div that is selected
@@ -75,6 +74,7 @@ let hrCheck = function (){
       head1.textContent = "Winner Player" + ` ${playerNumber}`;
       head1.style.color = "green";
       head1.style.fontSize = "4em";
+      head1.style.textShadow= "2px 2px 4px #000000";
     }
   }
 }
@@ -85,6 +85,7 @@ let vrCheck = function (){
       head1.textContent = "Winner Player" + ` ${playerNumber}`;
       head1.style.color = "green";
       head1.style.fontSize = "4em";
+      head1.style.textShadow= "2px 2px 4px #000000";
       }
   }
 }
@@ -95,6 +96,7 @@ let aglCheck = function (){
       head1.textContent = "Winner Player" + ` ${playerNumber}`;
       head1.style.color = "green";
       head1.style.fontSize = "4em";
+      head1.style.textShadow= "2px 2px 4px #000000";
       }
   }
 }

@@ -6,8 +6,13 @@
  }
  h1 {
      text-align: center;
-     border: 3px solid black;
-     margin: auto 16rem;
+     color: rgba(54, 185, 236, 1);
+     text-shadow: 2px 2px 4px #000000;
+     font-size: 6em;
+     border-bottom-color: black;
+     border-bottom-style: solid;
+     border-bottom-width: .05em;
+     margin: auto 4rem;
  }
  p {
      text-align: center;
@@ -31,9 +36,20 @@
     background: rgb(2,0,36);
     background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(13,13,94,1) 16%, rgba(0,212,255,1) 100%);
 }
-.dangerZone {
+#changeUp {
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    grid-template-rows: repeat(6,1fr);
+    column-gap: 5px;
+    row-gap: 5px;
+    border-radius: 20px;
+    height: 30em;
+    width: 40em;
+    margin: 0 auto;
     background: rgb(0,0,0);
-    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(34,5,5,1) 16%, rgba(221,11,11,1) 100%);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(34,116,14,1) 30%, rgba(5,249,11,0.7403621495327103) 100%);
+    /* background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(34,5,5,1) 16%, rgba(221,11,11,1) 100%); */
 }
 .littleBox {
     height: 80%;
