@@ -19,9 +19,9 @@ Project: Connect 4
 
 
 ### Used to create the game
-Languages: HTML5, CSS3, Javascript
-Design:
-Made with: VS CODE
+- Languages: HTML5, CSS3, Javascript
+- Design: Bootstrap
+- Made with: VS CODE
 
 
 ### More to come

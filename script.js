@@ -5,6 +5,9 @@
 // then in css create a grid
 
 // then call the div and class made to style the div
+$(window).on('load',function(){
+  $('#exampleModal').modal('show');
+});
 let playerNumber = 1;
 let head4 = document.querySelector("h4");
 let head1 = document.querySelector("h1");
@@ -59,7 +62,7 @@ createGameBoard();
 //try putting the class in the body and then toggling between
 // switch up half way thought the game if no win yet
 let backGroundChange = function (){
-  if(clickCounter == 21) {
+  if(clickCounter == 12) {
     head1.textContent = "Let's change things up";
     document.body.style.backgroundImage = "url('./trianglify-lowresgreen.png')";
     master.setAttribute('id',"changeUp");
